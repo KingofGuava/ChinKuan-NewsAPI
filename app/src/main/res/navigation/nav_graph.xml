@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress NavigationFile -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/headlineFragment">
+
+    <fragment
+        android:id="@+id/headlineFragment"
+        android:name="com.example.chinkuanlin_newsapi.HeadlineFragment"
+        android:label="fragment_headline"
+        tools:layout="@layout/fragment_headline" >
+
+        <action
+            android:id="@+id/action_headlineFragment_to_businessFragment"
+            app:destination="@id/businessFragment" />
+        <action
+            android:id="@+id/action_headlineFragment_to_sportsFragment"
+            app:destination="@id/sportsFragment" />
+        <action
+            android:id="@+id/action_headlineFragment_to_hcontentFragment"
+            app:destination="@id/hcontentFragment" >
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/hcontentFragment"
+        android:name="com.example.chinkuanlin_newsapi.HcontentFragment"
+        android:label="fragment_headline"
+        tools:layout="@layout/fragment_hcontent" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Default Title"/>
+        <argument
+            android:name="content"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Default Content"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/businessFragment"
+        android:name="com.example.chinkuanlin_newsapi.BusinessFragment"
+        android:label="fragment_business"
+        tools:layout="@layout/fragment_business" >
+        <action
+            android:id="@+id/action_businessFragment_to_headlineFragment"
+            app:destination="@id/headlineFragment" />
+        <action
+            android:id="@+id/action_businessFragment_to_sportsFragment"
+            app:destination="@id/sportsFragment" />
+        <action
+            android:id="@+id/action_businessFragment_to_bcontentFragment"
+            app:destination="@id/bcontentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bcontentFragment"
+        android:name="com.example.chinkuanlin_newsapi.BcontentFragment"
+        android:label="fragment_business"
+        tools:layout="@layout/fragment_bcontent" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Default Title"/>
+        <argument
+            android:name="content"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Default Content"/>
+    </fragment>
+    <fragment
+        android:id="@+id/sportsFragment"
+        android:name="com.example.chinkuanlin_newsapi.SportsFragment"
+        android:label="fragment_sports"
+        tools:layout="@layout/fragment_sports" >
+        <action
+            android:id="@+id/action_sportsFragment_to_headlineFragment"
+            app:destination="@id/headlineFragment" />
+        <action
+            android:id="@+id/action_sportsFragment_to_businessFragment"
+            app:destination="@id/businessFragment" />
+        <action
+            android:id="@+id/action_sportsFragment_to_scontentFragment"
+            app:destination="@id/scontentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scontentFragment"
+        android:name="com.example.chinkuanlin_newsapi.ScontentFragment"
+        android:label="fragment_sports"
+        tools:layout="@layout/fragment_scontent" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Default Title"/>
+        <argument
+            android:name="content"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Default Content"/>
+    </fragment>
+</navigation>
